@@ -1,4 +1,5 @@
 <script lang="ts">
+	import '../app.pcss';
 	import { isPreviewing, VisualEditing } from '@sanity/visual-editing/svelte';
 	import { page } from '$app/stores';
 	import LiveMode from '../components/LiveMode.svelte';
@@ -39,8 +40,8 @@
 </div>
 
 {#if $isPreviewing}
-	<VisualEditing />
-	<LiveMode />
+	<VisualEditing></VisualEditing>
+	<LiveMode></LiveMode>
 {/if}
 
 <style>
