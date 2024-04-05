@@ -24,7 +24,8 @@
     "sanity": "^3.33.0",
     "sanity-plugin-markdown": "^4.1.1",
     "sanity-plugin-tags": "^2.0.1",
-    "styled-components": "^6.1.8"
+    "styled-components": "^6.1.8",
+    "sveltekit-view-transition": "^0.5.3"
   },
   "devDependencies": {
     "@sanity/eslint-config-studio": "^3.0.1",

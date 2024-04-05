@@ -22,6 +22,7 @@
 		"lucide-svelte": "^0.359.0",
 		"mode-watcher": "^0.3.0",
 		"svelte-markdown": "^0.4.1",
+		"sveltekit-view-transition": "^0.5.3",
 		"svhighlight": "^0.7.1",
 		"tailwind-merge": "^2.2.2",
 		"tailwind-variants": "^0.2.1"

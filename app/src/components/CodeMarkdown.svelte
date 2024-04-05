@@ -14,7 +14,6 @@
 
 	let code = text;
 
-	console.log(text);
 	const newlangs = ['vue', 'svelte'];
 	if (newlangs.includes(lang)) lang = 'html';
 </script>

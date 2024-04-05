@@ -4,6 +4,9 @@
 	import { page } from '$app/stores';
 	import LiveMode from '../components/LiveMode.svelte';
 	import Header from '../components/Header.svelte';
+	import { setupViewTransition } from 'sveltekit-view-transition';
+
+	setupViewTransition();
 </script>
 
 {#if $isPreviewing}
@@ -25,3 +28,16 @@
 	<VisualEditing></VisualEditing>
 	<LiveMode></LiveMode>
 {/if}
+
+<style>
+	/* Disable default crossfade. */
+	:root {
+		view-transition-name: none;
+	}
+
+	/* Or, just modify the duration. */
+	:global(::view-transition-old(root)),
+	:global(::view-transition-new(root)) {
+		animation-duration: 2s;
+	}
+</style>

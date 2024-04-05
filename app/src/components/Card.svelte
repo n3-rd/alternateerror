@@ -15,13 +15,17 @@
 			class="w-auto"
 			src={urlFor(post.mainImage).width(500).height(300).url()}
 			alt="Cover image for {post.title}"
+			style:--tag="image-{post.slug.current}"
 		/>
 	{:else}
 		<div class="card__cover--none" />
 	{/if}
 
 	<div class="card__container">
-		<h3 class="text-4xl font-extrabold uppercase tracking-wide text-slate-800">
+		<h3
+			class="article-header line-clamp-4 text-4xl font-extrabold uppercase tracking-wide text-slate-800"
+			style:--article-header="article-{post.slug.current}"
+		>
 			{post.title}
 		</h3>
 		<!-- {#if post.excerpt}
@@ -32,3 +36,12 @@
 		</p>
 	</div>
 </a>
+
+<style type="text/css">
+	img {
+		view-transition-name: var(--tag);
+	}
+	.article-header {
+		view-transition-name: var(--article-header);
+	}
+</style>

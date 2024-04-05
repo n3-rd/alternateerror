@@ -10,6 +10,8 @@
 
 	import 'highlight.js/styles/github-dark.css';
 	import CodeMarkdown from '../../../components/CodeMarkdown.svelte';
+	import MainImage from '../../../components/MainImage.svelte';
+	import PostInfo from '../../../components/PostInfo.svelte';
 
 	export let data: PageData;
 	export let source: string;
@@ -24,37 +26,13 @@
 </script>
 
 <section class="post">
-	<div class="post-info flex flex-col gap-4 px-72 py-16">
-		<h1 class="post-title text-center text-6xl font-extrabold capitalize">
-			{post.title}
-		</h1>
-		<div class="post-excerpt text-center">
-			{#if post.excerpt}
-				<p class="post__excerpt text-2xl font-light lowercase">{post.excerpt}</p>
-			{/if}
-		</div>
-
-		<Separator class="bg-gray-700" />
-		<div class="post-metadata flex min-w-full justify-between font-semibold">
-			<div class="tag flex items-center gap-3">
-				<span class="">Tags</span>
-				<InfoIcon class="h-6 w-6 font-thin" stroke-width="0.2" />
-			</div>
-			<div class="date">
-				<p class="">
-					{formatDate(post._createdAt)}
-				</p>
-			</div>
-		</div>
-	</div>
+	<PostInfo {post} />
 
 	<div class="main-image">
 		{#if post.mainImage}
-			<img
-				class="post__cover min-w-full"
-				src={urlFor(post.mainImage).url()}
-				alt="Cover image for {post.title}"
-			/>
+			{#if post.mainImage}
+				<MainImage src={urlFor(post.mainImage).url()} altText={post.title} id={post.slug.current} />
+			{/if}
 		{:else}
 			<div class="post__cover--none" />
 		{/if}
