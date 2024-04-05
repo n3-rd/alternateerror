@@ -1,4 +1,4 @@
-import {defineField, defineType} from 'sanity'
+import { defineField, defineType } from 'sanity'
 
 export default defineType({
   name: 'post',
@@ -35,9 +35,9 @@ export default defineType({
       },
     }),
     defineField({
-      name: 'body',
-      title: 'Body',
-      type: 'blockContent',
+      type: "markdown",
+      description: "A Github flavored markdown field with image uploading",
+      name: "body"
     }),
   ],
   preview: {
@@ -47,8 +47,8 @@ export default defineType({
       media: 'mainImage',
     },
     prepare(selection) {
-      const {author} = selection
-      return {...selection, subtitle: author && `by ${author}`}
+      const { author } = selection
+      return { ...selection, subtitle: author && `by ${author}` }
     },
   },
 })

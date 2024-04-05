@@ -9,8 +9,9 @@
 	const q = useQuery(data);
 
 	$: ({ data: posts } = $q);
-	console.log($q);
-	console.log(urlFor($q.data[0].mainImage).url());
+	console.log('1', $q);
+
+	// console.log(urlFor($q.data[0].mainImage).url());
 </script>
 
 <section class="relative">
