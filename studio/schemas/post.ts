@@ -27,6 +27,20 @@ export default defineType({
       rows: 4,
     }),
     defineField({
+      name: 'author',
+      title: 'Author',
+      type: 'string',
+    }),
+    defineField({
+      name: 'myTags',
+      title: 'Tags',
+      type: 'tags',
+      options: {
+        includeFromRelated: 'myTags'
+
+      }
+    }),
+    defineField({
       name: 'mainImage',
       title: 'Main image',
       type: 'image',

@@ -15,11 +15,10 @@
 	let code = text;
 
 	console.log(text);
+	const newlangs = ['vue', 'svelte'];
+	if (newlangs.includes(lang)) lang = 'html';
 </script>
 
-<!-- <pre class={`language-` + lang}>
-
-	<code class="hljs py-5">{@html highlightedText}</code>
-</pre> -->
-
-<CodeBlock language={lang} {code} />
+<div class="py-7">
+	<CodeBlock language={lang} {code} />
+</div>

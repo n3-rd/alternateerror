@@ -20,6 +20,7 @@
 		"highlight.js": "^11.9.0",
 		"highlightjs-line-numbers.js": "^2.8.0",
 		"lucide-svelte": "^0.359.0",
+		"mode-watcher": "^0.3.0",
 		"svelte-markdown": "^0.4.1",
 		"svhighlight": "^0.7.1",
 		"tailwind-merge": "^2.2.2",

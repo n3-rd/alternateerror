@@ -9,7 +9,6 @@
 	const q = useQuery(data);
 
 	$: ({ data: posts } = $q);
-	console.log('1', $q);
 
 	// console.log(urlFor($q.data[0].mainImage).url());
 </script>
@@ -17,18 +16,6 @@
 <section class="relative">
 	{#if posts.length}
 		<div class="grid grid-cols-4 gap-7">
-			{#each posts as post}
-				<Card {post} />
-			{/each}
-			{#each posts as post}
-				<Card {post} />
-			{/each}
-			{#each posts as post}
-				<Card {post} />
-			{/each}
-			{#each posts as post}
-				<Card {post} />
-			{/each}
 			{#each posts as post}
 				<Card {post} />
 			{/each}

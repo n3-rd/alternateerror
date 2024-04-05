@@ -2,8 +2,8 @@ import { visionTool } from '@sanity/vision'
 import { defineConfig } from 'sanity'
 import { structureTool } from 'sanity/structure'
 import { presentationTool } from 'sanity/presentation'
-import { codeInput } from '@sanity/code-input'
 import { markdownSchema } from "sanity-plugin-markdown";
+import { tags } from 'sanity-plugin-tags'
 
 import { schemaTypes } from './schemas'
 
@@ -28,7 +28,7 @@ export default defineConfig({
     }),
     visionTool(),
     markdownSchema(),
-    // codeInput(),
+    tags({})
   ],
   schema: {
     types: schemaTypes,
