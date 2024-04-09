@@ -67,7 +67,7 @@
 	</div>
 	<div class="post__container flex min-w-full justify-center py-8">
 		{#if post.body}
-			<div class="post__content max-w-prose text-pretty text-xl">
+			<div class="post__content max-w-full text-pretty text-xl lg:max-w-prose">
 				<!-- <Markdown {source} /> -->
 				<SvelteMarkdown renderers={{ code: CodeMarkdown }} {source} />
 			</div>

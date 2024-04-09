@@ -9,16 +9,16 @@
 	console.log('post', post);
 </script>
 
-<div class="post-info flex flex-col gap-4 px-72 py-16">
+<div class="post-info mx-auto flex w-full flex-col gap-4 py-16 md:max-w-[800px]">
 	<h1
-		class="post-title article-header text-center text-6xl font-extrabold capitalize"
+		class="post-title article-header text-center text-4xl font-extrabold capitalize md:text-6xl"
 		style:--article-header="article-{post.slug.current}"
 	>
 		{post.title}
 	</h1>
 	<div class="post-excerpt text-center">
 		{#if post.excerpt}
-			<p class="post__excerpt text-2xl font-light lowercase">{post.excerpt}</p>
+			<p class="post__excerpt text-lg font-light lowercase md:text-2xl">{post.excerpt}</p>
 		{/if}
 	</div>
 	<p class=" font-semibold">

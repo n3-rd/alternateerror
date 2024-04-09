@@ -13,7 +13,7 @@
 		{postCount} <span>{postCount === 1 ? 'Post' : 'Posts'}</span> tagged "{slug}"
 	</h1>
 	{#if posts.length}
-		<div class="grid grid-cols-4 gap-7">
+		<div class="grid grid-cols-1 gap-7 md:grid-cols-2 lg:grid-cols-4">
 			{#each posts as post}
 				<Card {post} />
 			{/each}

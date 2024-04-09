@@ -23,7 +23,7 @@
 
 	<div class="card__container">
 		<h3
-			class="article-header line-clamp-4 text-4xl font-extrabold uppercase tracking-wide"
+			class="article-header line-clamp-4 text-2xl font-extrabold uppercase tracking-wide md:text-4xl"
 			style:--article-header="article-{post.slug.current}"
 		>
 			{post.title}

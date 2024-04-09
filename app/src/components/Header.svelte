@@ -6,7 +6,7 @@
 <div
 	class="fixed z-50 flex min-w-full max-w-full items-center justify-between bg-white px-8 py-4 uppercase dark:bg-black"
 >
-	<div class="portfolio flex items-center gap-7 text-xl">
+	<div class="portfolio hidden items-center gap-7 text-xl md:flex">
 		<a href="https://n3rd.vercel.app" target="_blank">Portfolio</a>
 
 		<button on:click={toggleMode}>

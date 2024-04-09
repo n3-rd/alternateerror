@@ -6,6 +6,7 @@
 	import Header from '../components/Header.svelte';
 	import { setupViewTransition } from 'sveltekit-view-transition';
 	import { ModeWatcher } from 'mode-watcher';
+	import Footer from '../components/Footer.svelte';
 
 	setupViewTransition();
 </script>
@@ -19,12 +20,11 @@
 <ModeWatcher />
 <!-- <header class="px-8"> -->
 <Header />
-<!-- </header> -->
 
 <main class=" px-8 pt-24">
 	<slot />
+	<Footer />
 </main>
-
 {#if $isPreviewing}
 	<VisualEditing></VisualEditing>
 	<LiveMode></LiveMode>
