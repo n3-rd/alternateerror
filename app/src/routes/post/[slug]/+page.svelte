@@ -12,8 +12,10 @@
 	import CodeMarkdown from '../../../components/CodeMarkdown.svelte';
 	import MainImage from '../../../components/MainImage.svelte';
 	import PostInfo from '../../../components/PostInfo.svelte';
+	import { timeToRead } from '$lib/utils';
 
 	export let data: PageData;
+	console.log('data', data);
 	export let source: string;
 	const q = useQuery(data);
 	let tags;
@@ -27,6 +29,29 @@
 	}
 	console.log('post', data);
 </script>
+
+<svelte:head>
+	<title>{data.options.initial.data.title}</title>
+	<meta name="description" content={post.excerpt} />
+	<meta property="og:title" content={post.title} />
+	<meta property="og:description" content={post.excerpt} />
+	<meta property="og:image" content={urlFor(post.mainImage).url()} />
+	<meta property="og:url" content={`https://www.alejandropuente.com/post/${post.slug}`} />
+	<meta property="og:type" content="article" />
+	<meta property="article:published_time" content={formatDate(post._createdAt)} />
+	<meta property="article:author" content="Jemegah Godwin" />
+	<meta property="article:section" content="Technology" />
+	<meta property="article:tag" content={tags.map((tag) => tag.title).join(', ')} />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:site" content="site" />
+	<meta name="twitter:creator" content="@n3_rdd" />
+	<meta name="twitter:title" content={post.title} />
+	<meta name="twitter:description" content={post.excerpt} />
+	<meta name="twitter:image" content={urlFor(post.mainImage).url()} />
+	<meta name="twitter:url" content={`https://www.alejandropuente.com/post/${post.slug}`} />
+	<meta name="twitter:label1" content="Reading time" />
+	<meta name="twitter:data1" content={`${timeToRead(post.body)} min read`} />
+</svelte:head>
 
 <section class="post">
 	<PostInfo {post} {tags} />
