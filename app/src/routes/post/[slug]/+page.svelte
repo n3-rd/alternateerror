@@ -16,17 +16,20 @@
 	export let data: PageData;
 	export let source: string;
 	const q = useQuery(data);
+	let tags;
 
 	$: ({ data: post } = $q);
 
 	$: {
 		// @ts-ignore
 		source = data.options.initial.data.body;
+		tags = data.tags;
 	}
+	console.log('post', data);
 </script>
 
 <section class="post">
-	<PostInfo {post} />
+	<PostInfo {post} {tags} />
 
 	<div class="main-image">
 		{#if post.mainImage}

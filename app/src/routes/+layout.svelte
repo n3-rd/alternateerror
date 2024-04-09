@@ -5,6 +5,7 @@
 	import LiveMode from '../components/LiveMode.svelte';
 	import Header from '../components/Header.svelte';
 	import { setupViewTransition } from 'sveltekit-view-transition';
+	import { ModeWatcher } from 'mode-watcher';
 
 	setupViewTransition();
 </script>
@@ -15,7 +16,7 @@
 		<span>Disable Preview</span>
 	</a>
 {/if}
-
+<ModeWatcher />
 <!-- <header class="px-8"> -->
 <Header />
 <!-- </header> -->

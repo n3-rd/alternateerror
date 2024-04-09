@@ -1,4 +1,5 @@
 import { postQuery as query, type Post } from '$lib/sanity/queries';
+import { getPostTags } from '$lib/utils';
 import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async (event) => {
@@ -7,6 +8,7 @@ export const load: PageServerLoad = async (event) => {
 
 	const params = { slug };
 	const initial = await loadQuery<Post>(query, params);
+	const tags = await getPostTags(slug);
 
 
 	// We pass the data in a format that is easy for `useQuery` to consume in the
@@ -15,6 +17,7 @@ export const load: PageServerLoad = async (event) => {
 	return {
 		query,
 		params,
-		options: { initial }
+		options: { initial },
+		tags
 	};
 };

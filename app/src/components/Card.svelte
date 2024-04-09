@@ -23,14 +23,12 @@
 
 	<div class="card__container">
 		<h3
-			class="article-header line-clamp-4 text-4xl font-extrabold uppercase tracking-wide text-slate-800"
+			class="article-header line-clamp-4 text-4xl font-extrabold uppercase tracking-wide"
 			style:--article-header="article-{post.slug.current}"
 		>
 			{post.title}
 		</h3>
-		<!-- {#if post.excerpt}
-			<p class="card__excerpt">{post.excerpt}</p>
-		{/if} -->
+
 		<p class="card__date">
 			{formatDate(post._createdAt)}
 		</p>

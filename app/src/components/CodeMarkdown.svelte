@@ -16,6 +16,8 @@
 
 	const newlangs = ['vue', 'svelte'];
 	if (newlangs.includes(lang)) lang = 'html';
+	// check if lang is empty
+	if (!lang) lang = 'plaintext';
 </script>
 
 <div class="py-7">

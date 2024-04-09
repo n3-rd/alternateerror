@@ -2,6 +2,16 @@ import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 import { cubicOut } from "svelte/easing";
 import type { TransitionConfig } from "svelte/transition";
+import { createClient } from '@sanity/client';
+import groq from 'groq';
+import { PUBLIC_SANITY_DATASET, PUBLIC_SANITY_PROJECT_ID } from "$env/static/public";
+export const client = createClient({
+    projectId: PUBLIC_SANITY_PROJECT_ID,
+    dataset: PUBLIC_SANITY_DATASET,
+    useCdn: false, // `false` if you want to ensure fresh data
+    apiVersion: '2023-03-20' // date of setup
+});
+
 
 export function cn(...inputs: ClassValue[]) {
     return twMerge(clsx(inputs));
@@ -60,3 +70,39 @@ export const flyAndScale = (
         easing: cubicOut
     };
 };
+
+export async function getAllTags(): Promise<string[]> {
+    return await client.fetch(groq`*[_type == "post" && defined(myTags)][].myTags[]`);
+}
+
+
+export const getTaggedPosts = async (tag: string): Promise<any[]> => {
+    const query = groq`
+      *[
+        _type == "post" 
+        && myTags[].value match $tag
+      ] {
+        title,
+        slug,
+        body,
+        _createdAt,
+        _updatedAt,
+        mainImage,
+        myTags,
+        author,
+        excerpt
+      }
+    `;
+    return await client.fetch(query, { tag });
+};
+export const getPostTags = async (slug: string) => {
+    return client.fetch(groq`*[_type == "post" && slug.current == $slug][0].myTags`, {
+        slug
+    });
+}
+
+export const timeToRead = (content: string): number => {
+    const words = content.split(" ").length;
+    const wordsPerMinute = 200;
+    return Math.ceil(words / wordsPerMinute);
+}
