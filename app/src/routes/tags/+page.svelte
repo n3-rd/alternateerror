@@ -28,6 +28,32 @@
 	};
 </script>
 
+<svelte:head>
+	<title>Alternateerror | Tags</title>
+	<meta
+		name="description"
+		content="Alternateerror | Get updated tech news on sveltekit, javascript, typescrip and react"
+	/>
+	<meta property="og:title" content="Alternateerror | Get updated developer news" />
+	<meta
+		property="og:description"
+		content="Alternateerror | Get updated tech news on sveltekit, javascript, typescrip and react"
+	/>
+	<meta property="og:image" content="/mainimage.png" />
+	<meta property="og:url" content="https://alternateerror.me" />
+	<meta property="og:type" content="article" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:site" content="site" />
+	<meta name="twitter:creator" content="@n3_rdd" />
+	<meta name="twitter:title" content="Alternateerror | Get updated developer news" />
+	<meta
+		name="twitter:description"
+		content="Alternateerror | Get updated tech news on sveltekit, javascript, typescrip and react"
+	/>
+	<meta name="twitter:image" content="/mainimage.png" />
+	<meta name="twitter:url" content="https://alternateerror.me" />
+</svelte:head>
+
 <div class="flex flex-col gap-4 py-24">
 	<h1 class=" text-6xl font-bold">Tags</h1>
 	<div class="search">
