@@ -15,26 +15,29 @@
 </script>
 
 <svelte:head>
-	<title>Alternate Error | Get updated tech news on</title>
-	<meta name="description" content={post.excerpt} />
-	<meta property="og:title" content={post.title} />
-	<meta property="og:description" content={post.excerpt} />
-	<meta property="og:image" content={urlFor(post.mainImage).url()} />
-	<meta property="og:url" content={`https://www.alejandropuente.com/post/${post.slug}`} />
+	<title>Alternate Error | Get updated developer news</title>
+	<meta
+		name="description"
+		content="Alternate Error | Get updated tech news on sveltekit, javascript, typescrip and react"
+	/>
+	<meta property="og:title" content="Alternate Error | Get updated developer news" />
+	<meta
+		property="og:description"
+		content="Alternate Error | Get updated tech news on sveltekit, javascript, typescrip and react"
+	/>
+	<meta property="og:image" content="/mainimage.png" />
+	<meta property="og:url" content="https://alternateerror.me" />
 	<meta property="og:type" content="article" />
-	<meta property="article:published_time" content={formatDate(post._createdAt)} />
-	<meta property="article:author" content="Jemegah Godwin" />
-	<meta property="article:section" content="Technology" />
-	<meta property="article:tag" content={tags.map((tag) => tag.title).join(', ')} />
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:site" content="site" />
 	<meta name="twitter:creator" content="@n3_rdd" />
-	<meta name="twitter:title" content={post.title} />
-	<meta name="twitter:description" content={post.excerpt} />
-	<meta name="twitter:image" content={urlFor(post.mainImage).url()} />
-	<meta name="twitter:url" content={`https://www.alejandropuente.com/post/${post.slug}`} />
-	<meta name="twitter:label1" content="Reading time" />
-	<meta name="twitter:data1" content={`${timeToRead(post.body)} min read`} />
+	<meta name="twitter:title" content="Alternate Error | Get updated developer news" />
+	<meta
+		name="twitter:description"
+		content="Alternate Error | Get updated tech news on sveltekit, javascript, typescrip and react"
+	/>
+	<meta name="twitter:image" content="/mainimage.png" />
+	<meta name="twitter:url" content="https://alternateerror.me" />
 </svelte:head>
 
 <section class="relative">
