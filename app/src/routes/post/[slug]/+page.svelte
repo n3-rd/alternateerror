@@ -3,7 +3,7 @@
 	import { formatDate } from '$lib/utils/index';
 	import { urlFor } from '$lib/sanity/image';
 	import type { PageData } from './$types';
-	import { InfoIcon } from 'lucide-svelte';
+	import { ArrowLeft, InfoIcon } from 'lucide-svelte';
 	import Separator from '$lib/components/ui/separator/separator.svelte';
 
 	import SvelteMarkdown from 'svelte-markdown';
@@ -54,6 +54,12 @@
 </svelte:head>
 
 <section class="post">
+	<a
+		href="/"
+		class="flex h-11 w-11 items-center justify-center rounded-full transition-colors duration-100 hover:bg-black"
+	>
+		<ArrowLeft />
+	</a>
 	<PostInfo {post} {tags} />
 
 	<div class="main-image">
