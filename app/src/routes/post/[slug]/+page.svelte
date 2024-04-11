@@ -67,7 +67,9 @@
 	</div>
 	<div class="post__container flex min-w-full justify-center py-8">
 		{#if post.body}
-			<div class="post__content max-w-full text-pretty text-xl lg:max-w-prose">
+			<div
+				class="post__content first-letter:[font-family: 'Cabinet Grotesk', sans-serif;] max-w-full text-pretty text-xl first-letter:text-5xl first-letter:font-semibold first-letter:uppercase first-letter:tracking-wide lg:max-w-prose"
+			>
 				<!-- <Markdown {source} /> -->
 				<SvelteMarkdown renderers={{ code: CodeMarkdown }} {source} />
 			</div>
